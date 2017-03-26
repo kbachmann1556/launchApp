@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node server.js",
     "stop": "pkill -SIGINT LaunchApp",
-    "restart": "npm stop; sleep 1; npm start &",
+    "restart": "npm stop; sleep 1; npm start &"
   },
   "dependencies": {
     "aws-sdk": "^2.7.13",
