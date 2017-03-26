@@ -22,7 +22,7 @@ var RequestController = function(){
 RequestController.prototype.index = function(req, res){
 	this.viewData.host = "//"+req.headers.host;
 	// render view
-	res.render('layout', this.viewData);
+	res.render('landing', this.viewData);
 }
 
 module.exports = RequestController;
