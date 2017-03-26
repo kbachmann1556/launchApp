@@ -1,0 +1,84 @@
+aside#sidebar.app-sidebar
+	.sidebar-header
+		a.sidebar-brand(href='#')
+			span.highlight Flat v3
+			|  Admin
+		button.sidebar-toggle(type='button')
+			i.fa.fa-times
+	.sidebar-menu
+		ul.sidebar-nav
+			li.active
+				a(href='./index.html')
+					.icon
+						i.fa.fa-tasks(aria-hidden='true')
+					.title Dashboard
+			li(class='messaging')
+				a(href='./messaging.html')
+					.icon
+						i.fa.fa-comments(aria-hidden='true')
+					.title Messaging
+			li.dropdown
+				a.dropdown-toggle(href='#', data-toggle='dropdown')
+					.icon
+						i.fa.fa-cube(aria-hidden='true')
+					.title UI Kits
+				.dropdown-menu
+					ul
+						li.section
+							i.fa.fa-file-o(aria-hidden='true')
+							|  UI Kits
+						li
+							a(href='./uikits/customize.html') Customize
+						li
+							a(href='./uikits/components.html') Components
+						li
+							a(href='./uikits/card.html') Card
+						li
+							a(href='./uikits/form.html') Form
+						li
+							a(href='./uikits/table.html') Table
+						li
+							a(href='./uikits/icons.html') Icons
+						li.line
+						li.section
+							i.fa.fa-file-o(aria-hidden='true')
+							|  Advanced Components
+						li
+							a(href='./uikits/pricing-table.html') Pricing Table
+						// <li><a href="./uikits/timeline.html">Timeline</a></li>
+						li
+							a(href='./uikits/chart.html') Chart
+			li.dropdown
+				a.dropdown-toggle(href='#', data-toggle='dropdown')
+					.icon
+						i.fa.fa-file-o(aria-hidden='true')
+					.title Pages
+				.dropdown-menu
+					ul
+						li.section
+							i.fa.fa-file-o(aria-hidden='true')
+							|  Admin
+						li
+							a(href='./pages/form.html') Form
+						li
+							a(href='./pages/profile.html') Profile
+						li
+							a(href='./pages/search.html') Search
+						li.line
+						li.section
+							i.fa.fa-file-o(aria-hidden='true')
+							|  Landing
+						// <li><a href="./pages/landing.html">Landing</a></li>
+						li
+							a(href='./pages/login.html') Login
+						li
+							a(href='./pages/register.html') Register
+						// <li><a href="./pages/404.html">404</a></li>
+	.sidebar-footer
+		ul.menu
+			li
+				a.dropdown-toggle(href='/', data-toggle='dropdown')
+					i.fa.fa-cogs(aria-hidden='true')
+			li
+				a(href='#')
+					span.flag-icon.flag-icon-th.flag-icon-squared

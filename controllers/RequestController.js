@@ -25,6 +25,10 @@ RequestController.prototype.index = function(req, res){
 	res.render('landing', this.viewData);
 }
 
+RequestController.prototype.login_page = function(req, res){
+	console.log('why are we here??');
+}
+
 module.exports = RequestController;
 
 //  private methods

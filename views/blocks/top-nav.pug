@@ -1,0 +1,121 @@
+nav#navbar.navbar.navbar-default
+	.container-fluid
+		.navbar-collapse.collapse.in
+			ul.nav.navbar-nav.navbar-mobile
+				li
+					button.sidebar-toggle(type='button')
+						i.fa.fa-bars
+				li.logo
+					a.navbar-brand(href='#')
+						span.highlight Flat v3
+						|  Admin
+				li
+					button.navbar-toggle(type='button')
+						img.profile-img(src='./assets/images/profile.png')
+			ul.nav.navbar-nav.navbar-left
+				li.navbar-title Dashboard
+				li.navbar-search.hidden-sm
+					input#search(type='text', placeholder='Search..')
+					button.btn-search
+						i.fa.fa-search
+			ul.nav.navbar-nav.navbar-right
+				li.dropdown.notification
+					a.dropdown-toggle(href='#', data-toggle='dropdown')
+						.icon
+							i.fa.fa-shopping-basket(aria-hidden='true')
+						.title New Orders
+						.count 0
+					.dropdown-menu
+						ul
+							li.dropdown-header Ordering
+							li.dropdown-empty No New Ordered
+							li.dropdown-footer
+								a(href='#')
+									| View All 
+									i.fa.fa-angle-right(aria-hidden='true')
+				li.dropdown.notification.warning
+					a.dropdown-toggle(href='#', data-toggle='dropdown')
+						.icon
+							i.fa.fa-comments(aria-hidden='true')
+						.title Unread Messages
+						.count 99
+					.dropdown-menu
+						ul
+							li.dropdown-header Message
+							li
+								a(href='#')
+									span.badge.badge-warning.pull-right 10
+									.message
+										img.profile(src='https://placehold.it/100x100')
+										.content
+											.title "Payment Confirmation.."
+											.description Alan Anderson
+							li
+								a(href='#')
+									span.badge.badge-warning.pull-right 5
+									.message
+										img.profile(src='https://placehold.it/100x100')
+										.content
+											.title "Hello World"
+											.description Marco  Harmon
+							li
+								a(href='#')
+									span.badge.badge-warning.pull-right 2
+									.message
+										img.profile(src='https://placehold.it/100x100')
+										.content
+											.title "Order Confirmation.."
+											.description Brenda Lawson
+							li.dropdown-footer
+								a(href='#')
+									| View All 
+									i.fa.fa-angle-right(aria-hidden='true')
+				li.dropdown.notification.danger
+					a.dropdown-toggle(href='#', data-toggle='dropdown')
+						.icon
+							i.fa.fa-bell(aria-hidden='true')
+						.title System Notifications
+						.count 10
+					.dropdown-menu
+						ul
+							li.dropdown-header Notification
+							li
+								a(href='#')
+									span.badge.badge-danger.pull-right 8
+									.message
+										.content
+											.title New Order
+											.description $400 total
+							li
+								a(href='#')
+									span.badge.badge-danger.pull-right 14
+									|                   Inbox
+							li
+								a(href='#')
+									span.badge.badge-danger.pull-right 5
+									|                   Issues Report
+							li.dropdown-footer
+								a(href='#')
+									| View All 
+									i.fa.fa-angle-right(aria-hidden='true')
+				li.dropdown.profile
+					a.dropdown-toggle(href='/html/pages/profile.html', data-toggle='dropdown')
+						img.profile-img(src='./assets/images/profile.png')
+						.title Profile
+					.dropdown-menu
+						.profile-info
+							h4.username Scott White
+						ul.action
+							li
+								a(href='#')
+									| Profile
+							li
+								a(href='#')
+									span.badge.badge-danger.pull-right 5
+									|                   My Inbox
+							li
+								a(href='#')
+									| Setting
+							li
+								a(href='#')
+									| Logout
