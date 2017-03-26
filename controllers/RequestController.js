@@ -25,4 +25,6 @@ RequestController.prototype.index = function(req, res){
 	res.render('layout', this.viewData);
 }
 
+module.exports = RequestController;
+
 //  private methods
