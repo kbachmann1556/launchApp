@@ -20,6 +20,7 @@ function requireLogin (req, res, next) {
 // Request Controller
 // router.get('/', requireLogin, function(req, res){ rc.index(req, res); });
 router.get('/', function(req, res){ rc.index(req, res); });
+router.get('/dashboard', function(req, res){ rc.view_dashboard(req, res); });
 
 
 // no login required

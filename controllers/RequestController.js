@@ -22,11 +22,13 @@ var RequestController = function(){
 RequestController.prototype.index = function(req, res){
 	this.viewData.host = "//"+req.headers.host;
 	// render view
-	res.render('landing', this.viewData);
+	res.render('login', this.viewData);
 }
 
-RequestController.prototype.login_page = function(req, res){
-	console.log('why are we here??');
+RequestController.prototype.view_dashboard = function(req, res){
+	this.viewData.host = "//"+req.headers.host;
+	// render view
+	res.render('dashboard', this.viewData);
 }
 
 module.exports = RequestController;
