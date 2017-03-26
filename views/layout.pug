@@ -1,0 +1,25 @@
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+		title='Launch Dashboard'
+		link(type='text/css', rel='stylesheet', href=host+'/css/bootstrap.min.css')
+		script(src='https://use.fontawesome.com/48e1cc27fb.js')
+	body
+		block content
+
+		block scripts
+			script(src=host+'/launch_obj.js')
+			script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
+			script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
+			script(src=host+'/js/bootstrap-toggle.min.js')
+			script(src=host+'/request.js')
+			script(src=host+'/js/google_analytics.js')
+			script(src=host+'/js/bootstrap.min.js')
+			script(src=host+'/js/pointer-events.js')
+			script(src=host+'/js/launch-requests.js')
+			script(src=host+'/js/launch.js')
+			script(src=host+'/js/init.js')
+			script(type='text/javascript').
+				console.log('layout')
