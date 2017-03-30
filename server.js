@@ -19,7 +19,7 @@ app.set('view engine', 'pug');
 // start session
 app.use(session({
   name: "session",
-  secret:"lauch.app",
+  secret:"launch.app",
   resave: true,
   saveUninitialized: true
 }));
@@ -52,6 +52,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // set base directory to public folder with client side scripts
 app.use(express.static(path.join(__dirname, './public')));
+console.log(path.join)
 
 // api routes
 const routes = require('./routes/index');

@@ -1,0 +1,40 @@
+.row
+    .col-xs-12
+        .card
+            .card-header.
+                Datatable
+            .card-body.no-padding.text-left
+                #DataTables_Table_0_wrapper.dataTables_wrapper.form-inline.no-footer.dt-bootstrap.no-footer
+                    .top
+                        #DataTables_Table_0_filter.dataTables_filter
+                            label
+                                input#search.form-control.input-sm( type = "search" placeholder="Search..." aria-controls="DataTables_Table_0")
+                        #DataTables_0_Table_0_length.dataTables_length
+                            label
+                                select.form-control.input-sm( name="DataTables_Table_0_length" aria-control="DataTables_Table_0" )
+                                    option( value="10" ) 10
+                                    option( value="25" ) 25
+                    table.datatable.table.table-striped.primary( cellspacing="0" width="100%" )
+                        thead
+                            tr
+                                th
+                                th name
+                                th status
+                                th
+                        tbody
+                            tr
+                                td
+                                    input( type="checkbox")
+                                td Andrew
+                                td.status-active active
+                                td
+                                    i.fa.fa-pencil
+                            tr
+                                td
+                                    input( type="checkbox")
+                                td Alfred
+                                td inactive
+                                td
+                                    i.fa.fa-pencil
+                        
+        
