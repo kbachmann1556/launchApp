@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node server.js",
     "stop": "pkill -SIGINT LaunchApp",
-    "restart": "npm stop; sleep 1; npm start &"
+    "restart": "npm stop; sleep 1; npm start &",
+    "build-css": "node-sass --include-path scss scss/main.scss   public/css/main.css"
   },
   "dependencies": {
     "aws-sdk": "^2.7.13",
@@ -26,5 +27,8 @@
     "multer": "^1.1.0",
     "pug": "^2.0.0-beta3",
     "xoauth2": "^1.1.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.3.0"
   }
 }
