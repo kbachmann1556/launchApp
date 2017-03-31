@@ -1,4 +1,4 @@
-# scss
-# run npm install to install node-sass compiler
-# In order to compile scss/main.scss, run "npm run build-css" in root directory
-# This will compile main.scss into public/css/main.css
+# run npm install to setup gulp
+# type 'gulp' in your terminal
+# gulp will run nodemon, compile scss, then place a minified css file in the public folder
+# gulp is also tracking changes in pug files and scss files. No need to reload page when changing these files

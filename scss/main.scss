@@ -1,14 +1,18 @@
-$sure: #E5E1D6;
-$lemon: #F7E47B;
-$ripe: #53960c;
-$prince: rgb(255, 119, 97);
-$lead: #2DA1DC;
-$link: #034070;
+// Flat UI Colors
+$turqoise: rgba(26, 188, 156,1.0);
+$concrete: rgba(149, 165, 166,1.0);
 
 .status-active {
-    background: $ripe;
+    background: $turqoise;
+}
+
+.status-inactive{
+    background: $concrete;
 }
 
 .white-text {
     color: white;
+}
+.new-btn {
+    border-radius: 5px;
 }
