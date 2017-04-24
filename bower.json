@@ -1,0 +1,20 @@
+{
+  "name": "Launch Dashboard",
+  "description": "Launch card dashboard",
+  "main": "",
+  "authors": [
+    "Andrew Espidol",
+    "Kai Bachman"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/kbachmann1556/launchApp",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}

@@ -1,6 +1,13 @@
 // Flat UI Colors
 $turqoise: rgba(26, 188, 156,1.0);
 $concrete: rgba(149, 165, 166,1.0);
+$sun: rgba(241, 196, 15,1.0);
+$alizarin: rgba(231, 76, 60,1.0);
+$cloud: rgba(236, 240, 241,1.0);
+
+*{
+    // outline: 1px red dotted !important;
+}
 
 .status-active {
     background: $turqoise;
@@ -10,9 +17,53 @@ $concrete: rgba(149, 165, 166,1.0);
     background: $concrete;
 }
 
+.circle {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    padding: 6px;
+}
+
 .white-text {
     color: white;
 }
 .new-btn {
     border-radius: 5px;
+}
+.white-bg {
+    background: white;
+}
+
+// Position Stuff
+.flex {
+    display: flex;
+}
+.block {
+    display: block;
+}
+
+// Spacing Stuff
+.top-margin-25 {
+    margin-top: 25px;
+}
+.padding-10 {
+    padding: 10px;
+}
+
+// Mouse Stuff
+.pointer {
+    cursor: pointer;
+}
+
+// Font Colors
+.sun-font {
+    color: $sun;
+}
+.alizarin-font {
+    color: $alizarin;
+}
+
+// Background Stuff
+.cloud-background{
+    background: rgba(236, 240, 241,1.0);
 }
