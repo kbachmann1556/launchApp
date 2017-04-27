@@ -9,7 +9,6 @@
     "build-css": "node-sass --include-path scss scss/main.scss   public/css/main.css"
   },
   "dependencies": {
-    "angular2": "^2.0.0-beta.21",
     "aws-sdk": "^2.7.13",
     "blueimp-file-upload-node": "^2.1.0",
     "body-parser": "~1.10.2",
@@ -23,12 +22,11 @@
     "express-session": "^1.14.1",
     "formidable": "^1.0.17",
     "googleapis": "^8.0.0",
-    "gulp": "^3.9.1",
     "json2csv": "^3.7.1",
     "lodash": "^4.16.2",
-    "minimatch": "^3.0.3",
     "morgan": "~1.5.1",
     "multer": "^1.1.0",
+    "pg": "^6.1.5",
     "pug": "^2.0.0-beta3",
     "reflect-metadata": "^0.1.2",
     "rxjs": "^5.0.0-beta.6",
