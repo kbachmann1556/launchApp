@@ -1,0 +1,45 @@
+<template name='topNav'>
+    <nav id="navbar" class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-collapse collapse in">
+                <ul class="nav navbar-nav navbar-mobile">
+                    <li>
+                        <button type="button" class="sidebar-toggle"><i class="fa fa-bars"></i></button>
+                    </li>
+                    <li class="logo"><a href="#" class="navbar-brand"><span class="highlight">Launch</span> Cards</a></li>
+                    <li>
+                        <button type="button" class="navbar-toggle"><img src="https://randomuser.me/api/portraits/women/21.jpg" class="profile-img"/></button>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="navbar-title">Dashboard</li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <!--<li class="dropdown notification danger">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                            <div class="icon"><i aria-hidden="true" class="fa fa-bell"></i></div>
+                            <div class="title">System Notifications</div>
+                            <div class="count">10</div>
+                        </a>
+                    </li>-->
+                    <li class="dropdown profile">
+                        <a href="/html/pages/profile.html" data-toggle="dropdown" class="dropdown-toggle"><img src="https://randomuser.me/api/portraits/women/21.jpg" class="profile-img" />
+                            <div class="title">Profile</div>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="profile-info">
+                                <h4 class="username">Scott White</h4>
+                            </div>
+                            <ul class="action">
+                                <li><a href="#">Profile</a></li>
+                                <!--<li><a href="#"><span class="badge badge-danger pull-right">5</span>                  My Inbox</a></li>-->
+                                <li><a href="#">Setting</a></li>
+                                <li><a href="#">Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</template>

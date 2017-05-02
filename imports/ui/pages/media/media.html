@@ -1,0 +1,37 @@
+<template name="media">
+    <div class="row flex">
+        <div class="col-md-6 white-bg padding-10">
+            <div class="input-group">
+                <label class="input-group-btn">
+                    <span style="margin-bottom: 0px;" class="btn btn-primary launchable-orange">
+                        Browse
+                        <input type="file" style="display:none;" multiple />
+                    </span>
+                </label>
+                <input type="text" readonly="readonly" class="form-control white-bg" />
+            </div>
+            <div class="video-container margin-bottom-15"><img src="http://placehold.it/800X450" alt="video" class="img-responsive" /></div><a class="btn btn-primary launchable-orange float-right">Upload Video</a>
+        </div>
+        <div class="col-md-1 text-center">
+            <div class="vertical-align-container"><i class="fa fa-4x fa-plus"></i></div>
+        </div>
+        <div class="col-md-5">
+            <div class="media-list-container white-bg text-center">
+                <ul>
+                    <li>
+                        <h3 class="subtle-text text-center">Target 1</h3><img src="http://placehold.it/500X250" alt="target" class="img-responsive" />
+                        <hr/>
+                    </li>
+                    <li>
+                        <h3 class="subtle-text text-center">Target 2</h3><img src="http://placehold.it/500X250" alt="target" class="img-responsive" />
+                        <hr/>
+                    </li>
+                    <li>
+                        <h3 class="subtle-text text-center">Target 2</h3><img src="http://placehold.it/500X250" alt="target" class="img-responsive" />
+                        <hr/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>

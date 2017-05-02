@@ -1,0 +1,42 @@
+<template name="newTarget">
+    <div class="row text-center add-target">
+        <div class="col-md-6 text-right"><a class="btn btn-primary launchable-orange" data-toggle="modal" data-target="#uploadTarget">
+      Add Target
+      <i class="fa fa-plus"></i></a></div>
+        <div class="col-md-6 text-left subtle-text">
+            <h1>JPEG, PNG</h1>
+        </div>
+    </div>
+    <div class="modal fade" id="uploadTarget" tabindex="-1" role="dialog" aria-labelledby="uploadTarget" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="uploadTargetLabel">Upload New Target</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+                <div class="col-md-12 white-bg padding-10">
+                    <div class="input-group">
+                        <label class="input-group-btn">
+                            <span style="margin-bottom: 0px;" class="btn btn-primary launchable-orange">
+                                Browse
+                                <input type="file" style="display:none;" multiple />
+                            </span>
+                        </label>
+                        <input type="text" readonly="readonly" class="form-control white-bg" />
+                    </div>
+                    <div class="video-container margin-bottom-15"><img src="http://placehold.it/800X450" alt="video" class="img-responsive" /></div>
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary launchable-orange">Upload Video</button>
+          </div>
+        </div>
+      </div>
+  </div>
+</template>
