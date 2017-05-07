@@ -12,16 +12,35 @@ import '../../ui/pages/targets/targets.js';
 import '../../ui/pages/detail/detail.js';
 import '../../ui/pages/media/media.js';
 import '../../ui/pages/not-found/not-found.js';
+import '../../ui/pages/login/login.js';
+
+
+AccountsTemplates.configureRoute('signIn', {
+  redirect: function(){
+    const user = Meteor.user();
+    if(user){
+      FlowRouter.go('/targets/');
+    }
+  }
+});
 
 // Set up all routes in the app
 FlowRouter.route('/', {
   name: 'App.home',
   action() {
-    BlazeLayout.render('App_body', { main: 'App_home' });
+    FlowRouter.go('/sign-in');
+  },
+});
+
+FlowRouter.route('/sign-in', {
+  name: 'App.login',
+  action() {
+    BlazeLayout.render('App_body', { main: 'login' });
   },
 });
 
 FlowRouter.route('/targets', {
+  triggersEnter: [AccountsTemplates.ensureSignedIn],  
   name: 'App.dashboard',
   action() {
     BlazeLayout.render('dashboard', { main: 'targets'});
@@ -29,6 +48,7 @@ FlowRouter.route('/targets', {
 });
 
 FlowRouter.route('/targets/:id', {
+  triggersEnter: [AccountsTemplates.ensureSignedIn],  
   name: 'App.detail',
   action() {
     BlazeLayout.render('dashboard', { main: 'detail'});
@@ -36,6 +56,7 @@ FlowRouter.route('/targets/:id', {
 });
 
 FlowRouter.route('/media', {
+  triggersEnter: [AccountsTemplates.ensureSignedIn],  
   name: 'App.media',
   action() {
     BlazeLayout.render('dashboard', { main: 'media'});

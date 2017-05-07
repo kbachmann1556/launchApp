@@ -1,23 +1,44 @@
 import './new-target.html';
 import { Meteor } from 'meteor/meteor';
-import { Targets } from '../../../api/target.js'
+
+Template.newTarget.onCreated(function () {
+  this.currentUpload = new ReactiveVar(false);
+});
+
+Template.newTarget.helpers({
+  currentUpload: function () {
+    return Template.instance().currentUpload.get();
+  },
+  imageFile: function() {
+    return Images.findOne();
+  }
+});
 
 Template.newTarget.events({
-  'submit .add-target' (event, template){
-    event.preventDefault();
+  'change #fileInput': function (e, template) {
+    if (e.currentTarget.files && e.currentTarget.files[0]) {
+      // We upload only one file, in case
+      // multiple files were selected
+      var upload = Images.insert({
+        file: e.currentTarget.files[0],
+        streams: 'dynamic',
+        chunkSize: 'dynamic'
+      }, false);
 
-    const target = (event.target.image_file);
-    console.log(target)
+      upload.on('start', function () {
+        template.currentUpload.set(this);
+      });
 
-    var reader = new FileReader();
-    var file = template.find('#fileUpload').files[0]; // get the file
+      upload.on('end', function (error, fileObj) {
+        if (error) {
+          alert('Error during upload: ' + error);
+        } else {
+          alert('File "' + fileObj.name + '" successfully uploaded');
+        }
+        template.currentUpload.set(false);
+      });
 
-    reader.onload = function (event) {
-      // event.target.result is the base64 string
-      console.log(event.target.result)
+      upload.start();
     }
-
-    // Meteor.call('targets.insert', target)
-
-  },
-})
+  }
+});

@@ -28,5 +28,10 @@ http@1.2.12
 jparker:crypto-hmac
 jparker:crypto-sha1
 jparker:crypto-base64
-useraccounts:unstyled
 useraccounts:flow-routing
+accounts-password
+accounts-facebook
+accounts-google
+useraccounts:bootstrap
+ostrio:files
+zimme:active-route

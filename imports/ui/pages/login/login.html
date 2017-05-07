@@ -1,0 +1,34 @@
+<template name="login">
+    <div class="app-container app-login">
+        <div class="flex-center">
+        <div class="app-header"></div>
+        <div class="app-body">
+            <div class="loader-container text-center">
+            <div class="icon">
+                <div class="sk-folding-cube">
+                <div class="sk-cube1 sk-cube"></div>
+                <div class="sk-cube2 sk-cube"></div>
+                <div class="sk-cube4 sk-cube"></div>
+                <div class="sk-cube3 sk-cube"></div>
+                </div>
+            </div>
+            <div class="title">Logging in...</div>
+            </div>
+            <div class="app-block">
+            <div class="app-form" style="text-align:center;">
+                <div class="form-header">
+                    <div class="app-brand"><span class="highlight">Launch</span> Dashboard</div>
+                </div>
+                {{#if loggedIn}}
+                    <a class="btn btn-primary launchable-orange" href="/targets">Go To Dashboard</a>
+                {{else}}
+                    {{> atForm}}
+                {{/if}}
+            </div>
+            </div>
+        </div>
+        <div class="app-footer"></div>
+        </div>
+    </div>
+ 
+</template>

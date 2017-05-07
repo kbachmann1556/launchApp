@@ -26,27 +26,27 @@ Meteor.methods({
   },
   'targets.insert'(image){
     console.log(image)
-    // var target = {
+    var target = {
 
-    //     // name of the target, unique within a database
-    //     'name': 'my target',
-    //     // width of the target in scene unit
-    //     'width': 32.0,
-    //     // the base64 encoded binary recognition image data
-    //     'image': util.encodeFileBase64(__dirname + '/someImage.png'),
-    //     // indicates whether or not the target is active for query
-    //     'active_flag': true,
-    //     // the base64 encoded application metadata associated with the target
-    //     'application_metadata': util.encodeBase64('some metadata about your image')
-    // };
+        // name of the target, unique within a database
+        'name': 'my target',
+        // width of the target in scene unit
+        'width': 32.0,
+        // the base64 encoded binary recognition image data
+        'image': util.encodeFileBase64(CryptoJS.enc.Base64.stringify(image)),
+        // indicates whether or not the target is active for query
+        'active_flag': true,
+        // the base64 encoded application metadata associated with the target
+        'application_metadata': util.encodeBase64('some metadata about your image')
+    };
 
-    // client.addTarget(target, function(error,result){
-    //   if(error){
-    //     console.error(result);
-    //   } else {
-    //     console.log(result);
-    //   }
-    // })
+    client.addTarget(target, function(error,result){
+      if(error){
+        console.error(result);
+      } else {
+        console.log(result);
+      }
+    })
 
     // client.listTargets(function(error, result){
     //   console.log(result)
