@@ -16,26 +16,28 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            <div class="row">
-                <div class="col-md-12 white-bg padding-10">
-                    <div class="input-group">
-                        <label class="input-group-btn">
-                            <span style="margin-bottom: 0px;" class="btn btn-primary launchable-orange">
-                                Browse
-                                <input type="file" style="display:none;" multiple />
-                            </span>
-                        </label>
-                        <input type="text" readonly="readonly" class="form-control white-bg" />
-                    </div>
-                    <div class="video-container margin-bottom-15"><img src="http://placehold.it/800X450" alt="video" class="img-responsive" /></div>
+          <form class="add-target">
+            <div class="modal-body">
+              <div class="row">
+                  <div class="col-md-12 white-bg padding-10">
+                      <div class="input-group">
+                          <label class="input-group-btn">
+                              <span style="margin-bottom: 0px;" class="btn btn-primary launchable-orange">
+                                  Browse
+                                  <input type="file" name="image_file" style="display:none;" multiple />
+                              </span>
+                          </label>
+                          <input type="text" readonly="readonly" class="form-control white-bg" />
+                      </div>
+                      <div class="video-container margin-bottom-15"><img src="http://placehold.it/800X450" alt="video" class="img-responsive" /></div>
+                  </div>
                 </div>
-              </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary launchable-orange">Upload Video</button>
-          </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <input type="submit" class="btn btn-primary launchable-orange" value="Upload Video">
+            </div>
+          </form>
         </div>
       </div>
   </div>
