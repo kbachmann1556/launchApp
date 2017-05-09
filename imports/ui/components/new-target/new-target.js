@@ -15,14 +15,18 @@ Template.newTarget.helpers({
 });
 
 Template.newTarget.events({
-  'change #fileInput': function (e, template) {
-    if (e.currentTarget.files && e.currentTarget.files[0]) {
+  'submit #add-target': function (e, template) {
+    e.preventDefault();
+    console.log(e.target.target_name.value);
+    if (e.target.image_file.files && e.target.image_file.files[0]) {
       // We upload only one file, in case
       // multiple files were selected
+      
       var upload = Images.insert({
-        file: e.currentTarget.files[0],
+        file: e.target.image_file.files[0],
         streams: 'dynamic',
-        chunkSize: 'dynamic'
+        chunkSize: 'dynamic',
+        meta: { targetName: e.target.target_name.value, createdAt: new Date() }
       }, false);
 
       upload.on('start', function () {
@@ -40,5 +44,8 @@ Template.newTarget.events({
 
       upload.start();
     }
+  },
+  'click .launchable-orange'(e){
+      Meteor.call('targets.insert');    
   }
 });

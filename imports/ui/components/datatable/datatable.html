@@ -31,36 +31,31 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td><img src="http://placehold.it/100X70" alt="target image" /></td>
-                                    <td>Andrew</td>
-                                    <td class="sun-font">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </td>
-                                    <td>10/11/17</td>
-                                    <td class="text-center"><i class="fa fa-pencil"></i></td>
-                                </tr>
-                                <tr>
-                                    <td><img src="http://placehold.it/100X70" alt="target image" /></td>
-                                    <td>Alfred</td>
-                                    <td class="sun-font">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </td>
-                                    <td>02/12/17</td>
-                                    <td class="text-center">
-                                        <a href="/targets/1">
-                                            <i class="fa fa-pencil"></i>
-                                        </a>
-                                    </td>
-                                </tr>
+                                {{#each targets}}
+                                    {{#if isOwner}}
+                                        <tr>
+                                            <td>
+                                                <div class="img-container">
+                                                    <img class="img-responsive img-thumbnail" src="{{link}}" alt="{{name}}" />
+                                                </div>
+                                            </td>
+                                            <td>{{meta.targetName}}</td>
+                                            <td class="sun-font">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </td>
+                                            <td>{{formatDate meta.createdAt}}</td>
+                                            <td class="text-center">
+                                                <a href="/targets/{{_id}}">
+                                                    <i class="fa fa-pencil"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    {{/if}}
+                                {{/each}}
                             </tbody>
                         </table>
                     </div>

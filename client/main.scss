@@ -1,5 +1,9 @@
 @import "../imports/ui/stylesheets/not-found.scss";
 
+// *{
+//   outline: 1px red dotted;
+// }
+
 .modal-title {
   display: inline-block;
 }
@@ -15,4 +19,10 @@
   border: none;
   box-shadow: none;
   height: 100%;
+}
+
+.datatable {
+  td:nth-child(1){
+    width:20%;
+  }
 }
