@@ -26,7 +26,7 @@ Template.newTarget.events({
         file: e.target.image_file.files[0],
         streams: 'dynamic',
         chunkSize: 'dynamic',
-        meta: { targetName: e.target.target_name.value, createdAt: new Date() }
+        meta: { targetName: e.target.target_name.value, vuforia_id: null, vuforia_response: null,  createdAt: new Date() }
       }, false);
 
       upload.on('start', function () {
@@ -45,7 +45,4 @@ Template.newTarget.events({
       upload.start();
     }
   },
-  'click .launchable-orange'(e){
-      Meteor.call('targets.insert');    
-  }
 });

@@ -32,6 +32,7 @@
                             </thead>
                             <tbody>
                                 {{#each targets}}
+                                    {{vuforiaChecker meta _id}}
                                     {{#if isOwner}}
                                         <tr>
                                             <td>
@@ -40,13 +41,15 @@
                                                 </div>
                                             </td>
                                             <td>{{meta.targetName}}</td>
-                                            <td class="sun-font">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </td>
+                                            {{#if meta.vuforia_response}}
+                                                <td class="sun-font">
+                                                    {{{targetRating meta.vuforia_response.tracking_rating}}}
+                                                </td>
+                                            {{else}}
+                                                <td class="sun-font">
+                                                    pending
+                                                </td>
+                                            {{/if}}
                                             <td>{{formatDate meta.createdAt}}</td>
                                             <td class="text-center">
                                                 <a href="/targets/{{_id}}">

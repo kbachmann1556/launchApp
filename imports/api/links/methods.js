@@ -25,49 +25,50 @@ Meteor.methods({
     });
   },
 
-  'targets.insert'(){
-    const img_object = Images.findOne()
-    console.log("here")
+  'targets.insert'(path, name, id){
     var target = {
-
         // name of the target, unique within a database
-        'name': 'test target name',
+        'name': name,
         // width of the target in scene unit
         'width': 32.0,
         // the base64 encoded binary recognition image data
-        'image': util.encodeFileBase64(img_object.path),
+        'image': util.encodeFileBase64(path),
         // indicates whether or not the target is active for query
         'active_flag': true,
         // the base64 encoded application metadata associated with the target
         'application_metadata': util.encodeBase64('some metadata about your image')
     };
 
-    // console.log(target);
-
-    // console.log(target)
-
-    client.addTarget(target, function(error,result){
+    client.addTarget(target, Meteor.bindEnvironment(function(error,result){
       if(error){
         console.error(result);
       } else {
-        console.log(result);
+        console.log(result.target_id);
+        Images.update({ _id: id }, {$set: {"meta.vuforia_id": result.target_id}})
       }
-    })
-
-    // client.listTargets(function(error, result){
-    //   console.log(result)
-    // })
-
-    // client.retrieveTarget('9f1ceb654c024a49b78241ee28e3af38', function(error, result){
-    //   console.log(result)
-    // })
-    // const update = {
-    //   'active_flag' : false
-    // }
-
-    // client.updateTarget('9f1ceb654c024a49b78241ee28e3af38', update, function(error,result){
-    //   console.log("Here",result)
-    // })
+    }));
 
   },
+  'targets.retrieve'(meta, id){
+    console.log("inside test", meta)
+    client.retrieveTarget(meta.vuforia_id, Meteor.bindEnvironment(function(error, result){
+      if(error){
+        console.log(error)
+      } else {
+        console.log(result.target_record)
+        Images.update({ _id: id }, {$set: {"meta.vuforia_response": result.target_record}})        
+      }
+    }))
+  },
+  'targets.destroy'(id) {
+    const img = Images.findOne({_id: id})
+    client.deleteTarget(img.meta.vuforia_id, Meteor.bindEnvironment(function(err, result){
+      if(err){
+        console.log(err)
+      } else {
+        console.log(result)
+        img.remove();
+      }
+    }))
+  }
 });
